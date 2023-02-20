@@ -27,6 +27,7 @@
     "fast-glob": "^3.2.12",
     "fastq": "^1.15.0",
     "fill-range": "^7.0.1",
+    "flowbite": "^1.6.3",
     "function-bind": "^1.1.1",
     "glob-parent": "^6.0.2",
     "has": "^1.0.3",
@@ -68,8 +69,8 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch"
   },
   "repository": {
     "type": "git",
