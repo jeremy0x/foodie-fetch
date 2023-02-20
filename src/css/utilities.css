@@ -1,0 +1,18 @@
+@layer utilities {
+  .text-clamp-08-10 {
+    font-size: clamp(0.8rem, 2.5vw, 1.0rem);
+  }
+
+  .text-clamp-10-12 {
+    font-size: clamp(1.0rem, 2.5vw, 1.2rem);
+  }
+
+  .text-clamp-12-17 {
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem) !important;
+  }
+
+  .text-clamp-16-20 {
+    font-size: clamp(1.6rem, 2.5vw, 2.0rem) !important;
+    line-height: 1.4;
+  }
+}
