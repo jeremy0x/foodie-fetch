@@ -1,68 +1,424 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="robots" content="index, follow" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="{{THEME_COLOR}}" />
-  <meta name="robots" content="index, follow">
+    <!-- Primary Meta Tags -->
+    <title>Find Recipes with your Ingredient — Foodie Fetch</title>
+    <meta name="title" content="Food Recipe App — Foodie Fetch" />
+    <meta
+      name="description"
+      content="A food recipe app built with JavaScript and Tailwind CSS"
+    />
+    <meta name="keywords" content="recipe-app, fetch-api, mealdb-api" />
 
-  <!-- Primary Meta Tags -->
-  <title>Foodie Fetch &mdash; Food Recipe App</title>
-  <meta name="title" content="Foodie Fetch &mdash; Food Recipe App" />
-  <meta name="description" content="A food recipe app built with JavaScript and Tailwind CSS" />
-  <meta name="keywords" content="recipe-app, fetch-api, mealdb-api" />
+    <!-- Alternate language versions of the page -->
+    <!-- <link rel="alternate" hreflang="{{LANGUAGE_CODE}}" href="{{ALTERNATE_PAGE_URL}}" /> -->
 
-  <!-- Alternate language versions of the page -->
-  <!-- <link rel="alternate" hreflang="{{LANGUAGE_CODE}}" href="{{ALTERNATE_PAGE_URL}}" /> -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- 
+    <!-- 
     This favicon was generated using the following graphics from Twitter Twemoji:
 
-      - Graphics Title: 1f372.svg
-      - Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
-      - Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f372.svg
-      - Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+    - Graphics Title: 1f355.svg
+    - Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
+    - Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f355.svg
+    - Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
    -->
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://foodie-fetch.netlify.app" />
-  <meta property="og:title" content="Foodie Fetch &mdash; Food Recipe App" />
-  <meta property="og:description" content="A food recipe app built with JavaScript and Tailwind CSS" />
-  <meta property="og:image" content="{{OG_IMAGE_URL}}" />
-  <meta property="og:site_name" content="Foodie Fetch" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://foodie-fetch.netlify.app" />
+    <meta property="og:title" content="Food Recipe App — Foodie Fetch" />
+    <meta
+      property="og:description"
+      content="A food recipe app built with JavaScript and Tailwind CSS"
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/gFcwxqK/Find-Recipes-with-your-Ingredient-Foodie-Fetch-127-0-0-1.png"
+    />
+    <meta property="og:site_name" content="Foodie Fetch" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://foodie-fetch.netlify.app" />
-  <meta property="twitter:title" content="Foodie Fetch &mdash; Food Recipe App" />
-  <meta property="twitter:description" content="A food recipe app built with JavaScript and Tailwind CSS" />
-  <meta property="twitter:image" content="{{TWITTER_IMAGE_URL}}" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://foodie-fetch.netlify.app" />
+    <meta property="twitter:title" content="Food Recipe App — Foodie Fetch" />
+    <meta
+      property="twitter:description"
+      content="A food recipe app built with JavaScript and Tailwind CSS"
+    />
+    <meta
+      property="twitter:image"
+      content="https://i.ibb.co/gFcwxqK/Find-Recipes-with-your-Ingredient-Foodie-Fetch-127-0-0-1.png"
+    />
 
-  <!-- Schema markup for structured data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Recipe",
-      "name": "Foodie Fetch — Food Recipe App",
-      "description": "A food recipe app built with JavaScript and Tailwind CSS",
-      "url": "https://foodie-fetch.netlify.app",
-      "image": "{{SCHEMA_IMAGE_URL}}"
-    }
-  </script>
-</head>
+    <!-- Schema markup for structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": "Foodie Fetch — Food Recipe App",
+        "description": "A food recipe app built with JavaScript and Tailwind CSS",
+        "url": "https://foodie-fetch.netlify.app",
+        "image": "https://i.ibb.co/gFcwxqK/Find-Recipes-with-your-Ingredient-Foodie-Fetch-127-0-0-1.png"
+      }
+    </script>
 
-<body>
-  <header></header>
-  <main></main>
-  <footer></footer>
-</body>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./src/css/utilities.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
 
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d778668bce.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body
+    class="relative flex min-h-screen flex-col bg-gradient-to-br from-slate-800 to-slate-900 font-sans text-white"
+  >
+    <div class="container mx-auto px-4">
+      <!-- === Header Section === -->
+      <header>
+        <!-- == Navbar == -->
+        <nav class="fixed top-0 left-0 z-10 mt-0.5 w-full px-4">
+          <div
+            class="mx-auto mt-2 max-w-screen-xl rounded-lg border border-slate-600 bg-slate-900 bg-opacity-30 px-4 py-2.5 shadow-md backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 sm:px-8"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./apple-touch-icon.png"
+                  class="h-6 sm:h-9"
+                  alt="foodie fetch Logo"
+                  width="36"
+                />
+                <span
+                  class="text-clamp-10-12 whitespace-nowrap font-semibold text-white"
+                  >foodieFetch</span
+                >
+              </div>
+              <div class="flex space-x-6">
+                <a
+                  href="https://github.com/jeremy0x/foodie-fetch/"
+                  target="_blank"
+                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  <span class="sr-only">GitHub repository</span>
+                </a>
+                <a
+                  href="https://jeremy0x.hashnode.dev/"
+                  target="_blank"
+                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                >
+                  <i class="fa-brands fa-hashnode"></i>
+                  <span class="sr-only">Hashnode blog</span>
+                </a>
+                <a
+                  href="https://twitter.com/jeremy0x/"
+                  target="_blank"
+                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                  <span class="sr-only">Twitter page</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/jeremy0x/"
+                  target="_blank"
+                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span class="sr-only">LinkedIn profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- === Main Content Section === -->
+      <main class="mb-60 flex-grow">
+        <!-- == Page title/headers == -->
+        <div class="header mt-24 p-4 text-center">
+          <h1 class="text-clamp-16-20 mb-4 font-bold">
+            Find Recipes with the Ingredients You Have! <br />
+            👩‍🍳🍲🍳
+          </h1>
+          <div class="quote text-clamp-08-10" id="quote">
+            <!-- Dynamically generated food quote (stored in ./src/js/food-quotes.js) -->
+          </div>
+        </div>
+
+        <!-- == Search bar == -->
+        <form class="mx-auto mb-8 max-w-4xl p-4">
+          <label
+            for="search"
+            class="sr-only mb-2 text-sm font-medium text-white"
+            >Search</label
+          >
+          <div class="relative">
+            <div
+              class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+            >
+              <!-- Search icon -->
+              <svg
+                aria-hidden="true"
+                class="h-5 w-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="search"
+              class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none focus:border-teal-500 focus:ring-teal-500"
+              placeholder="Search recipes 🥗..."
+              required
+            />
+            <button
+              type="submit"
+              class="absolute right-2.5 bottom-2.5 rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-800"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+
+        <!-- == Search Results | Cards == -->
+        <h2 class="text-clamp-12-17 mb-8 text-center font-semibold">
+          Recipe Ideas for Your Search:
+        </h2>
+
+        <!-- Card -->
+        <div class="search-results flex flex-row flex-wrap">
+          <div
+            class="mx-auto mb-4 max-w-sm border-spacing-4 rounded-lg border border-gray-700 bg-gray-800 shadow"
+          >
+            <img
+              class="rounded-t-lg object-cover"
+              src="https://unsplash.it/700/700"
+              alt=""
+            />
+            <div class="p-5">
+              <h5
+                class="text-clamp-12-17 mb-2 text-center font-semibold tracking-tight text-white"
+              >
+                Recipe Name
+              </h5>
+              <div class="flex w-full items-center justify-center">
+                <button
+                  class="mt-4 inline-flex items-center rounded-lg bg-teal-600 px-3 py-2 text-center text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-800"
+                  id="recipe-btn"
+                  data-modal-target="modal"
+                  data-modal-toggle="modal"
+                  type="button"
+                >
+                  Recipe Details 🍲
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          id="modal"
+          tabindex="-1"
+          class="fixed top-0 left-0 right-0 z-50 hidden h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0"
+          role="dialog"
+          style="align-items: flex-start"
+        >
+          <div class="relative h-full w-full max-w-4xl md:h-auto">
+            <!-- Modal content -->
+            <div class="relative rounded-lg bg-gray-700">
+              <!-- Modal header -->
+              <div
+                class="flex items-center justify-between rounded-t border-b border-gray-600 p-5"
+              >
+                <h3 class="text-clamp-12-17 font-medium capitalize text-white">
+                  Recipe Title
+                </h3>
+                <button
+                  type="button"
+                  class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-600 hover:text-white"
+                  data-modal-hide="modal"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="space-y-6 p-6">
+                <div
+                  class="flex flex-wrap items-center justify-between gap-0.5"
+                >
+                  <h3 class="text-clamp-12-17">Recipe Preparation</h3>
+                  <div class="m-2 rounded border px-4 py-0.5 md:px-8">
+                    <span class="text-center text-sm font-semibold text-white"
+                      >Vegetarian</span
+                    >
+                  </div>
+                </div>
+                <p class="text-sm leading-relaxed text-gray-400 md:text-base">
+                  With less than a month to go before the European Union enacts
+                  new consumer privacy laws for its citizens, companies around
+                  the world are updating their terms of service agreements to
+                  comply.
+                  <br />
+                  <br />
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tenetur tempore impedit corrupti. Provident sed eligendi
+                  distinctio eius adipisci ullam. Commodi illum distinctio totam
+                  blanditiis quod quia maiores, harum provident optio, assumenda
+                  at aliquam laudantium dolorum? Dicta vitae eius nobis
+                  laboriosam provident deleniti voluptatem aliquid expedita,
+                  accusantium in magni ipsum non, id saepe necessitatibus minima
+                  aspernatur ratione. Totam eaque rem hic. Blanditiis iste
+                  magnam eaque earum fugiat doloremque itaque incidunt
+                  similique, consectetur illo unde nemo voluptatibus est. Alias
+                  optio velit dolorem tenetur ut molestiae ducimus.
+                  <br />
+                  <br />
+                  Totam ad maxime, a aspernatur quas provident minus molestias
+                  architecto! Unde hic, voluptatum ducimus neque doloribus
+                  reprehenderit distinctio enim! Laudantium, voluptatibus vero
+                  corrupti quasi, ea praesentium quae architecto deserunt labore
+                  doloribus, consequatur tenetur asperiores dolorem beatae.
+                  Facere animi error vero quis, quo earum non, ducimus
+                  laboriosam quisquam vitae quibusdam nam necessitatibus
+                  blanditiis veniam sequi architecto consectetur amet. Quae
+                  repellat dicta alias, nemo maxime molestias magnam magni iste
+                  saepe perspiciatis neque necessitatibus voluptate quod veniam
+                  ea eos esse consequuntur possimus aut est corporis! Quo sed
+                  ducimus consequatur, molestiae illo impedit, aperiam mollitia
+                  ipsa totam ab harum voluptatum unde est, corrupti quas rem
+                  nostrum. Facere unde magni illum, impedit blanditiis in ex
+                  quibusdam? Provident voluptatem asperiores repellat voluptate.
+                  <br />
+                  <br />
+                  The European Union’s General Data Protection Regulation
+                  (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
+                  common set of data rights in the European Union. It requires
+                  organizations to notify users as soon as possible of high-risk
+                  data breaches that could personally affect them.
+                </p>
+              </div>
+              <!-- Modal footer -->
+              <div
+                class="flex flex-col items-center gap-8 space-x-2 rounded-b border-t border-gray-600 p-6"
+              >
+                <div class="font-semibol text-2xl">Recipe Tutorial Video</div>
+                <div class="h-full w-full">
+                  <iframe
+                    style="height: 315px; width: min(100%, 560px)"
+                    class="mx-auto"
+                    src="https://www.youtube.com/embed/-84Zz2EP4h4"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- === Footer Section === -->
+      <footer class="absolute bottom-0 left-0 mt-16 w-full p-4 sm:p-6">
+        <div class="mx-auto max-w-screen-xl">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center">
+              <img
+                src="./apple-touch-icon.png"
+                class="mr-3 h-8"
+                alt="foodie fetch logo"
+              />
+              <span
+                class="text-clamp-12-17 self-center whitespace-nowrap font-semibold text-white"
+                >foodieFetch</span
+              >
+            </div>
+          </div>
+          <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-400 sm:text-center"
+              >© 2023 foodieFetch™. All Rights Reserved.
+            </span>
+            <div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+              <a
+                href="https://github.com/jeremy0x/foodie-fetch/"
+                target="_blank"
+                class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span class="sr-only">GitHub repository</span>
+              </a>
+              <a
+                href="https://jeremy0x.hashnode.dev/"
+                target="_blank"
+                class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+              >
+                <i class="fa-brands fa-hashnode"></i>
+                <span class="sr-only">Hashnode blog</span>
+              </a>
+              <a
+                href="https://twitter.com/jeremy0x/"
+                target="_blank"
+                class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+              >
+                <i class="fa-brands fa-twitter"></i>
+                <span class="sr-only">Twitter page</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/jeremy0x/"
+                target="_blank"
+                class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+                <span class="sr-only">LinkedIn profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./src/js/food-quotes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+  </body>
 </html>

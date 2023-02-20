@@ -3,4 +3,4 @@ const quotes = [{ quote: "I cook with wine, sometimes I even add it to the food.
 const quotesContainer = document.getElementById("quote")
 const randomIndex = Math.floor(Math.random() * quotes.length)
 const randomQuote = quotes[randomIndex]
-quotesContainer.innerHTML = `\n<p>\n  "${randomQuote.quote}" <br />\n  <span class="italic">- ${randomQuote.author}</span>\n</p>\n`;
+quotesContainer.innerHTML = `\n<p>\n  <span className="italic">"${randomQuote.quote}"</span> <br />\n  <span class="font-semibold">- ${randomQuote.author}</span>\n</p>\n`;
