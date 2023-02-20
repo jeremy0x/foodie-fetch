@@ -1,6 +1,6 @@
-# Foodie Fetch 🍕📥
+# 🍲 foodieFetch
 
-Foodie Fetch is a simple food recipe app built with Vanilla JavaScript and Tailwind CSS. It uses the MealDB API to fetch recipes based on the ingredients you have on hand.
+foodieFetch is a simple food recipe app built with Vanilla JavaScript and Tailwind CSS. It uses the MealDB API to fetch recipes based on the ingredients you have on hand.
 
 ## How it works 🍜
 
@@ -10,7 +10,7 @@ You'll see a list of recipe results, each with a thumbnail image, recipe name, a
 
 ## Technologies used 🍴
 
-Foodie Fetch is built using:
+foodieFetch is built using:
 
 - Vanilla JavaScript
 - Tailwind CSS
@@ -20,10 +20,10 @@ Foodie Fetch is built using:
 
 This app uses the MealDB API for recipe data. You can find more information about the API and how to use it at <https://www.themealdb.com/api.php>.
 
-## Contributing 🍳
+## Contributing 🥄
 
-If you'd like to contribute to Foodie Fetch, please fork this repository and create a pull request. Contributions and bug reports are welcome!
+If you'd like to contribute to foodieFetch, please fork this repository and create a pull request. Contributions and bug reports are welcome!
 
-## License
+## License 🧁
 
 This project is licensed under the MIT License.
