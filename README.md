@@ -17,10 +17,13 @@ Foodie Fetch is built using:
 - MealDB API
 
 ## Credits 🍣
-This app uses the MealDB API for recipe data. You can find more information about the API and how to use it at https://www.themealdb.com/api.php.
+
+This app uses the MealDB API for recipe data. You can find more information about the API and how to use it at <https://www.themealdb.com/api.php>.
 
 ## Contributing 🍳
+
 If you'd like to contribute to Foodie Fetch, please fork this repository and create a pull request. Contributions and bug reports are welcome!
 
 ## License
+
 This project is licensed under the MIT License.
