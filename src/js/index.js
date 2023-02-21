@@ -9,18 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(function () {
     header.classList.add("animate");
-  }, 700);
+  }, 500);
 
   setTimeout(function () {
     searchBar.classList.add("animate");
-  }, 1200);
+  }, 1000);
 
   setTimeout(function () {
     footer.classList.add("animate");
-  }, 1700);
+  }, 1500);
 });
-
-// fetching from the API and implementation
 
 // Search Results HTML
 /*
