@@ -6,7 +6,7 @@ foodieFetch is a simple food recipe app built with Vanilla JavaScript and Tailwi
 
 When you first open the app, you'll see a search bar where you can enter the ingredients you have. Clicking on the "Search" button will fetch recipe results from the API based on your search query.
 
-You'll see a list of recipe results, each with a thumbnail image, recipe name, and a "Get Recipe" button. Clicking on the "Get Recipe" button for a recipe will display a popup with instructions and a video to watch below the instructions.
+You'll see a list of recipe results, each with a thumbnail image, recipe name, and a "`Recipe Details 🍲`" button. Clicking on the "Get Recipe" button for a recipe will display a popup with instructions and a video to watch below the instructions.
 
 ## Technologies used 🍴
 
