@@ -91,7 +91,7 @@
       <!-- === Header Section === -->
       <header>
         <!-- == Navbar == -->
-        <nav class="fixed top-0 left-0 z-10 mt-0.5 w-full px-4">
+        <nav class="navbar fixed top-0 left-0 z-10 mt-0.5 w-full px-4">
           <div
             class="mx-auto mt-2 max-w-screen-xl rounded-lg border border-slate-600 bg-slate-900 bg-opacity-30 px-4 py-2.5 shadow-md backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 sm:px-8"
           >
@@ -108,7 +108,7 @@
                   >foodieFetch</span
                 >
               </div>
-              <div class="flex space-x-6">
+              <div class="nav-icons flex space-x-6">
                 <a
                   href="https://github.com/jeremy0x/foodie-fetch/"
                   target="_blank"
@@ -161,7 +161,7 @@
         </div>
 
         <!-- == Search bar == -->
-        <form class="mx-auto mb-8 max-w-4xl p-4">
+        <form class="search-bar mx-auto mb-8 max-w-4xl p-4">
           <label
             for="search"
             class="sr-only mb-2 text-sm font-medium text-white"
@@ -191,53 +191,33 @@
             <input
               type="search"
               id="search"
-              class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none focus:border-teal-500 focus:ring-teal-500"
+              class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none focus:border-amber-500 focus:ring-amber-500"
               placeholder="Search recipes 🥗..."
               required
             />
             <button
               type="submit"
-              class="absolute right-2.5 bottom-2.5 rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-800"
+              class="search-btn absolute right-2.5 bottom-2.5 rounded-lg px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out focus:outline-none focus:ring-4"
             >
               Search
             </button>
           </div>
         </form>
 
-        <!-- == Search Results | Cards == -->
-        <h2 class="text-clamp-12-17 mb-8 text-center font-semibold">
+        <!-- == Search Results & Cards == -->
+        <h2
+          class="text-clamp-12-17 mb-8 hidden text-center font-semibold"
+          id="search-result-title"
+        >
           Recipe Ideas for Your Search:
         </h2>
 
-        <!-- Card -->
-        <div class="search-results flex flex-row flex-wrap">
-          <div
-            class="mx-auto mb-4 max-w-sm border-spacing-4 rounded-lg border border-gray-700 bg-gray-800 shadow"
-          >
-            <img
-              class="rounded-t-lg object-cover"
-              src="https://unsplash.it/700/700"
-              alt=""
-            />
-            <div class="p-5">
-              <h5
-                class="text-clamp-12-17 mb-2 text-center font-semibold tracking-tight text-white"
-              >
-                Recipe Name
-              </h5>
-              <div class="flex w-full items-center justify-center">
-                <button
-                  class="mt-4 inline-flex items-center rounded-lg bg-teal-600 px-3 py-2 text-center text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-800"
-                  id="recipe-btn"
-                  data-modal-target="modal"
-                  data-modal-toggle="modal"
-                  type="button"
-                >
-                  Recipe Details 🍲
-                </button>
-              </div>
-            </div>
-          </div>
+        <!-- Search results Cards -->
+        <div
+          class="search-results flex flex-row flex-wrap justify-around"
+          id="search-results"
+        >
+          <!-- Generated based on search results (stored in ./src/js/index.js) -->
         </div>
 
         <!-- Modal -->
@@ -255,8 +235,11 @@
               <div
                 class="flex items-center justify-between rounded-t border-b border-gray-600 p-5"
               >
-                <h3 class="text-clamp-12-17 font-medium capitalize text-white">
-                  Recipe Title
+                <h3
+                  class="text-clamp-12-17 font-medium capitalize text-white"
+                  id="modal-recipe-title"
+                >
+                  <!-- * Recipe Title * -->
                 </h3>
                 <button
                   type="button"
@@ -281,58 +264,22 @@
               </div>
               <!-- Modal body -->
               <div class="space-y-6 p-6">
-                <div
-                  class="flex flex-wrap items-center justify-between gap-0.5"
-                >
+                <div class="flex flex-wrap items-center justify-between gap-4">
                   <h3 class="text-clamp-12-17">Recipe Preparation</h3>
-                  <div class="m-2 rounded border px-4 py-0.5 md:px-8">
-                    <span class="text-center text-sm font-semibold text-white"
-                      >Vegetarian</span
+                  <div class="rounded border px-4 py-0.5 md:px-8">
+                    <span
+                      class="text-center text-sm font-semibold text-white"
+                      id="modal-recipe-category"
                     >
+                      <!-- * Recipe Category * -->
+                    </span>
                   </div>
                 </div>
-                <p class="text-sm leading-relaxed text-gray-400 md:text-base">
-                  With less than a month to go before the European Union enacts
-                  new consumer privacy laws for its citizens, companies around
-                  the world are updating their terms of service agreements to
-                  comply.
-                  <br />
-                  <br />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur tempore impedit corrupti. Provident sed eligendi
-                  distinctio eius adipisci ullam. Commodi illum distinctio totam
-                  blanditiis quod quia maiores, harum provident optio, assumenda
-                  at aliquam laudantium dolorum? Dicta vitae eius nobis
-                  laboriosam provident deleniti voluptatem aliquid expedita,
-                  accusantium in magni ipsum non, id saepe necessitatibus minima
-                  aspernatur ratione. Totam eaque rem hic. Blanditiis iste
-                  magnam eaque earum fugiat doloremque itaque incidunt
-                  similique, consectetur illo unde nemo voluptatibus est. Alias
-                  optio velit dolorem tenetur ut molestiae ducimus.
-                  <br />
-                  <br />
-                  Totam ad maxime, a aspernatur quas provident minus molestias
-                  architecto! Unde hic, voluptatum ducimus neque doloribus
-                  reprehenderit distinctio enim! Laudantium, voluptatibus vero
-                  corrupti quasi, ea praesentium quae architecto deserunt labore
-                  doloribus, consequatur tenetur asperiores dolorem beatae.
-                  Facere animi error vero quis, quo earum non, ducimus
-                  laboriosam quisquam vitae quibusdam nam necessitatibus
-                  blanditiis veniam sequi architecto consectetur amet. Quae
-                  repellat dicta alias, nemo maxime molestias magnam magni iste
-                  saepe perspiciatis neque necessitatibus voluptate quod veniam
-                  ea eos esse consequuntur possimus aut est corporis! Quo sed
-                  ducimus consequatur, molestiae illo impedit, aperiam mollitia
-                  ipsa totam ab harum voluptatum unde est, corrupti quas rem
-                  nostrum. Facere unde magni illum, impedit blanditiis in ex
-                  quibusdam? Provident voluptatem asperiores repellat voluptate.
-                  <br />
-                  <br />
-                  The European Union’s General Data Protection Regulation
-                  (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
-                  common set of data rights in the European Union. It requires
-                  organizations to notify users as soon as possible of high-risk
-                  data breaches that could personally affect them.
+                <p
+                  class="text-sm leading-relaxed text-gray-400 md:text-base"
+                  id="modal-preparation-instructions"
+                >
+                  <!-- * Recipe Preparation Instructions * -->
                 </p>
               </div>
               <!-- Modal footer -->
@@ -342,10 +289,10 @@
                 <div class="font-semibol text-2xl">Recipe Tutorial Video</div>
                 <div class="h-full w-full">
                   <iframe
-                    style="height: 315px; width: min(100%, 560px)"
-                    class="mx-auto"
-                    src="https://www.youtube.com/embed/-84Zz2EP4h4"
-                    title="YouTube video player"
+                    id="modal-yt-video"
+                    class="video-embed mx-auto"
+                    src=""
+                    title="Recipe Tutorial Video"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
@@ -358,7 +305,7 @@
       </main>
 
       <!-- === Footer Section === -->
-      <footer class="absolute bottom-0 left-0 mt-16 w-full p-4 sm:p-6">
+      <footer class="footer absolute bottom-0 left-0 mt-16 w-full p-4 sm:p-6">
         <div class="mx-auto max-w-screen-xl">
           <div class="mb-6 md:mb-0">
             <div class="flex items-center">
@@ -375,10 +322,11 @@
           </div>
           <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
           <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-400 sm:text-center"
+            <span
+              class="flex justify-center text-sm text-gray-400 sm:text-center"
               >© 2023 foodieFetch™. All Rights Reserved.
             </span>
-            <div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <div class="mt-4 flex justify-center space-x-6 sm:mt-0">
               <a
                 href="https://github.com/jeremy0x/foodie-fetch/"
                 target="_blank"
@@ -419,6 +367,7 @@
 
     <!-- Scripts -->
     <script src="./src/js/food-quotes.js"></script>
+    <script src="./src/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
   </body>
 </html>

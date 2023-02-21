@@ -18,3 +18,76 @@
 *::-webkit-scrollbar-thumb:active {
   background-color: rgb(31 41 55);
 }
+
+/* search button */
+.search-btn {
+  background-color: #D4A418;
+}
+
+/*
+#D4A418
+#00425F
+#007383 
+*/
+
+/* youtube video */
+.video-embed {
+  height: 315px;
+  width: min(100%, 560px);
+}
+
+@media (max-width: 480px) {
+  .video-embed {
+    height: 245px;
+  }
+}
+
+/* card image */
+.card-img-container {
+  height: 315px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* navbar social icons */
+@media (max-width: 375px) {
+  .nav-icons {
+    display: none;
+  }
+}
+
+/* animation on page load */
+.navbar,
+.header,
+.search-bar,
+footer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.navbar.animate,
+.header.animate,
+.search-bar.animate,
+footer.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
