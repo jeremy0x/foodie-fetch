@@ -11,8 +11,8 @@
     font-size: clamp(1.2rem, 2.5vw, 1.7rem) !important;
   }
 
-  .text-clamp-16-20 {
-    font-size: clamp(1.6rem, 2.5vw, 2.0rem) !important;
+  .text-clamp-16-35 {
+    font-size: clamp(1.6rem, 3vw, 3.5rem) !important;
     line-height: 1.4;
   }
 }
