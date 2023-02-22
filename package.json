@@ -9,7 +9,7 @@
   "name": "foodie-fetch",
   "description": "Foodie Fetch is a simple food recipe app built with Vanilla JavaScript and Tailwind CSS. It uses the MealDB API to fetch recipes based on the ingredients you have on hand.",
   "version": "1.0.0",
-  "main": "./src/js/index.js",
+  "main": "./src/js/app.js",
   "dependencies": {
     "acorn": "^7.4.1",
     "acorn-node": "^1.8.2",
@@ -71,8 +71,8 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify",
-    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify --watch"
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/tailwind.css --minify --watch"
   },
   "repository": {
     "type": "git",

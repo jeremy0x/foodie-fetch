@@ -19,9 +19,9 @@
     <!-- <link rel="alternate" hreflang="{{LANGUAGE_CODE}}" href="{{ALTERNATE_PAGE_URL}}" /> -->
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/icons/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- 
@@ -73,7 +73,7 @@
     </script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./src/css/tailwind.css" />
     <link rel="stylesheet" href="./src/css/utilities.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
 
@@ -98,7 +98,7 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center space-x-2">
                 <img
-                  src="./apple-touch-icon.png"
+                  src="./src/icons/apple-touch-icon.png"
                   class="h-6 sm:h-9"
                   alt="foodie fetch Logo"
                   width="36"
@@ -227,7 +227,7 @@
           class="search-results flex flex-row flex-wrap justify-evenly gap-6"
           id="search-results"
         >
-          <!-- Generated based on search results (stored in ./src/js/index.js) -->
+          <!-- Generated based on search results (stored in ./src/js/app.js) -->
         </div>
 
         <!-- Modal -->
@@ -320,7 +320,7 @@
           <div class="mb-6 md:mb-0">
             <div class="flex items-center">
               <img
-                src="./apple-touch-icon.png"
+                src="./src/icons/apple-touch-icon.png"
                 class="mr-3 h-8"
                 alt="foodie fetch logo"
               />
@@ -377,7 +377,6 @@
 
     <!-- Scripts -->
     <script src="./src/js/food-quotes.js"></script>
-    <script type="module" src="./src/js/index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script type="module" src="./src/js/app.js"></script>
   </body>
 </html>
