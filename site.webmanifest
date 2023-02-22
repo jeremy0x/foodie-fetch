@@ -1,6 +1,6 @@
 {
-  "name": "Foodie Fetch — Food Recipe App",
-  "short_name": "Foodie Fetch",
+  "name": "foodieFetch — Food Recipe App",
+  "short_name": "foodieFetch",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

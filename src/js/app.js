@@ -109,7 +109,7 @@ function getMealsFromQuery(event) {
           `;
         });
       } else {
-        searchTitle.textContent = `We couldn't find a matching recipe for your ingredient 😕`;
+        searchTitle.textContent = `Sorry, but we couldn't find a matching recipe for ${searchQuery} 😕`;
         searchResults.innerHTML = "";
       }
       searchTitle.classList.remove("hidden");
