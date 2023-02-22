@@ -20,8 +20,26 @@
 }
 
 /* search button */
-.search-btn {
+.search-btn,
+.recipe-btn {
   background-color: #D4A418;
+}
+
+.search-btn:hover,
+.recipe-btn:hover {
+  background-color: #8d6e10;
+}
+
+.search-btn:focus,
+.recipe-btn:focus {
+  border-color: #8d6e10;
+}
+
+
+
+.recipe-btn {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 /*
@@ -40,6 +58,12 @@
   .video-embed {
     height: 245px;
   }
+}
+
+/* card */
+.card {
+  /* .max-w-sm: 24rem | 384px */
+  max-width: 20rem;
 }
 
 /* card image */
@@ -89,5 +113,48 @@ footer.animate {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* loading animation */
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.dot-1 {
+  animation-delay: 0.1s;
+}
+
+.dot-2 {
+  animation-delay: 0.2s;
+}
+
+.dot-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.5);
+    opacity: 0.3;
   }
 }

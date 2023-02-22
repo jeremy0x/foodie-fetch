@@ -150,12 +150,21 @@
       <!-- === Main Content Section === -->
       <main class="mb-60 flex-grow">
         <!-- == Page title/headers == -->
-        <div class="header mt-24 p-4 text-center">
-          <h1 class="text-clamp-16-20 mb-4 font-bold">
-            Find Recipes with the Ingredients You Have! <br />
-            👩‍🍳🍲🍳
+        <div class="header mt-24 p-2 text-center">
+          <h1 class="mb-6 text-4xl font-bold">
+            Find
+            <span
+              class="bg-gradient-to-r from-emerald-600 to-amber-500 bg-clip-text text-transparent"
+              >Recipes</span
+            >
+            with the
+            <span
+              class="mb-2 bg-gradient-to-r from-amber-500 to-emerald-600 bg-clip-text text-transparent"
+              >Ingredients</span
+            >
+            You Have! <span class="whitespace-nowrap">🧅🍅</span>
           </h1>
-          <div class="quote text-clamp-08-10" id="quote">
+          <div class="quote text-clamp-10-12 mx-auto max-w-4xl" id="quote">
             <!-- Dynamically generated food quote (stored in ./src/js/food-quotes.js) -->
           </div>
         </div>
@@ -190,14 +199,15 @@
             </div>
             <input
               type="search"
-              id="search"
+              id="search-bar"
               class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none focus:border-amber-500 focus:ring-amber-500"
               placeholder="Search recipes 🥗..."
               required
             />
             <button
               type="submit"
-              class="search-btn absolute right-2.5 bottom-2.5 rounded-lg px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out focus:outline-none focus:ring-4"
+              class="search-btn absolute right-2.5 bottom-2.5 rounded-lg px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-400"
+              id="search-btn"
             >
               Search
             </button>
@@ -209,12 +219,12 @@
           class="text-clamp-12-17 mb-8 hidden text-center font-semibold"
           id="search-result-title"
         >
-          Recipe Ideas for Your Search:
+          <!-- Recipe Ideas for Your Search: -->
         </h2>
 
         <!-- Search results Cards -->
         <div
-          class="search-results flex flex-row flex-wrap justify-around"
+          class="search-results flex flex-row flex-wrap justify-evenly gap-6"
           id="search-results"
         >
           <!-- Generated based on search results (stored in ./src/js/index.js) -->
@@ -367,7 +377,7 @@
 
     <!-- Scripts -->
     <script src="./src/js/food-quotes.js"></script>
-    <script src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
   </body>
 </html>
