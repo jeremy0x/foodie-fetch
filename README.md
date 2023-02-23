@@ -1,5 +1,7 @@
 # 🍲 foodieFetch
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c76df78d-433a-43c9-98fd-75b6e5b59764/deploy-status)](https://app.netlify.com/sites/foodie-fetch/deploys)
+
 foodieFetch is a simple food recipe app built with Vanilla JavaScript and Tailwind CSS. It uses the MealDB API to fetch recipes based on the ingredients you have on hand.
 
 ![website screenshot](./src/img/og-image.png)
