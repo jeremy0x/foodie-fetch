@@ -19,34 +19,27 @@
   background-color: rgb(31 41 55);
 }
 
-/* search button */
+/* buttons */
 .search-btn,
-.recipe-btn {
-  background-color: #D4A418;
+.recipe-btn,
+.bmc-logo {
+  background-color: #d4a418;
 }
 
 .search-btn:hover,
-.recipe-btn:hover {
-  background-color: #8d6e10;
+.recipe-btn:hover,
+.bmc-logo:hover {
+  background-color: #b89018;
 }
 
-.search-btn:focus,
-.recipe-btn:focus {
-  border-color: #8d6e10;
+.github-icon:hover {
+  background-color: #d4a418;
 }
-
-
 
 .recipe-btn {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-
-/*
-#D4A418
-#00425F
-#007383 
-*/
 
 /* youtube video */
 .video-embed {
@@ -81,39 +74,30 @@
 
 /* navbar social icons */
 @media (max-width: 375px) {
-  .nav-icons {
+  .nav-icons a:not(.github-icon) {
     display: none;
   }
 }
 
 /* animation on page load */
-.navbar,
-.header,
-.search-bar,
-footer {
+.anim-up,
+.anim-down {
   opacity: 0;
-  transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.navbar.animate,
-.header.animate,
-.search-bar.animate,
-footer.animate {
-  opacity: 1;
-  transform: translateY(0);
+.anim-up {
+  transform: translateY(20px);
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+.anim-down {
+  transform: translateY(-20px);
+}
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.anim-up.animate,
+.anim-down.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* loading animation */
@@ -156,5 +140,22 @@ footer.animate {
   100% {
     transform: scale(0.5);
     opacity: 0.3;
+  }
+}
+
+/* search results animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

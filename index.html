@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="bg-slate-900">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,20 +90,6 @@
       src="https://kit.fontawesome.com/d778668bce.js"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Buy Me A Coffee -->
-    <script
-      data-name="BMC-Widget"
-      data-cfasync="false"
-      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-      data-id="jeremy0x"
-      data-description="Support me on Buy me a coffee!"
-      data-message=""
-      data-color="#D4A418"
-      data-position="Right"
-      data-x_margin="18"
-      data-y_margin="100"
-    ></script>
   </head>
 
   <body
@@ -113,55 +99,39 @@
       <!-- === Header Section === -->
       <header>
         <!-- == Navbar == -->
-        <nav class="navbar fixed top-0 left-0 z-10 mt-0.5 w-full px-4">
+        <nav class="navbar anim-up fixed top-0 left-0 z-10 mt-0.5 w-full px-4">
           <div
             class="mx-auto mt-2 max-w-screen-xl rounded-lg border border-slate-600 bg-slate-900 bg-opacity-30 px-4 py-2.5 shadow-md backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 sm:px-8"
           >
             <div class="flex items-center justify-between">
+              <!-- Logo -->
               <div class="flex items-center space-x-2">
                 <img
                   src="./src/icons/apple-touch-icon.png"
-                  class="h-6 sm:h-9"
+                  class="h-auto w-8 sm:w-9"
                   alt="foodie fetch Logo"
-                  width="36"
                 />
                 <span
                   class="text-clamp-10-12 whitespace-nowrap font-semibold text-white"
                   >foodieFetch</span
                 >
               </div>
+
+              <!-- Star on GitHub btn -->
               <div class="nav-icons flex space-x-6">
                 <a
                   href="https://github.com/jeremy0x/foodie-fetch/"
                   target="_blank"
-                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                  class="github-icon rounded-lg bg-gray-700 py-2 px-2 text-white transition duration-500 ease-in-out hover:text-slate-900 sm:px-4"
                 >
-                  <i class="fa-brands fa-github"></i>
+                  <span class="flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-github"></i>
+                    <span
+                      class="hidden whitespace-nowrap text-xs font-medium sm:block md:text-sm"
+                      >Star on GitHub</span
+                    ></span
+                  >
                   <span class="sr-only">GitHub repository</span>
-                </a>
-                <a
-                  href="https://jeremy0x.hashnode.dev/"
-                  target="_blank"
-                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-700"
-                >
-                  <i class="fa-brands fa-hashnode"></i>
-                  <span class="sr-only">Hashnode blog</span>
-                </a>
-                <a
-                  href="https://twitter.com/jeremy0x/"
-                  target="_blank"
-                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-400"
-                >
-                  <i class="fa-brands fa-twitter"></i>
-                  <span class="sr-only">Twitter page</span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/jeremy0x/"
-                  target="_blank"
-                  class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-500"
-                >
-                  <i class="fa-brands fa-linkedin"></i>
-                  <span class="sr-only">LinkedIn profile</span>
                 </a>
               </div>
             </div>
@@ -170,10 +140,10 @@
       </header>
 
       <!-- === Main Content Section === -->
-      <main class="mb-60 flex-grow">
+      <main class="mb-72 flex-grow">
         <!-- == Page title/headers == -->
-        <div class="header mt-24 p-2 text-center">
-          <h1 class="mb-6 text-4xl font-bold">
+        <div class="header mt-28 mb-4 text-center">
+          <h1 class="hero-text anim-up mb-6 text-3xl font-bold md:text-4xl">
             Find
             <span
               class="bg-gradient-to-r from-emerald-600 to-amber-500 bg-clip-text text-transparent"
@@ -186,13 +156,16 @@
             >
             You Have! <span class="whitespace-nowrap">🧅🍅</span>
           </h1>
-          <div class="quote text-clamp-10-12 mx-auto max-w-4xl" id="quote">
+          <div
+            class="quote text-clamp-10-12 anim-up mx-auto max-w-4xl"
+            id="quote"
+          >
             <!-- Dynamically generated food quote (stored in ./src/js/food-quotes.js) -->
           </div>
         </div>
 
         <!-- == Search bar == -->
-        <form class="search-bar mx-auto mb-8 max-w-4xl p-4">
+        <form class="search-bar anim-up mx-auto mb-8 max-w-4xl py-4">
           <label
             for="search"
             class="sr-only mb-2 text-sm font-medium text-white"
@@ -222,13 +195,13 @@
             <input
               type="search"
               id="search-bar"
-              class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none focus:border-amber-500 focus:ring-amber-500"
+              class="block w-full rounded-lg border border-gray-600 bg-gray-700 p-4 pl-10 text-sm text-white placeholder-gray-400 outline-none autofill:bg-gray-600 autofill:text-white focus:border-amber-500 focus:ring-amber-500"
               placeholder="Search recipes 🥗..."
               required
             />
             <button
               type="submit"
-              class="search-btn absolute right-2.5 bottom-2.5 rounded-lg px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-400"
+              class="search-btn absolute right-2.5 bottom-2.5 rounded-lg px-4 py-2 text-sm font-bold text-slate-900 transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-400"
               id="search-btn"
             >
               Search
@@ -238,11 +211,18 @@
 
         <!-- == Search Results & Cards == -->
         <h2
-          class="text-clamp-12-17 mb-8 hidden text-center font-semibold"
+          class="mb-8 hidden text-center text-2xl font-semibold"
           id="search-result-title"
         >
           <!-- Recipe Ideas for Your Search: -->
         </h2>
+
+        <div
+          class="error text-clamp-10-12 hidden text-center font-normal text-white sm:text-red-500"
+          id="error"
+        >
+          <!-- Error message -->
+        </div>
 
         <!-- Search results Cards -->
         <div
@@ -254,96 +234,32 @@
 
         <!-- Modal -->
         <div
-          id="modal"
+          id="details-modal"
           tabindex="-1"
           class="fixed top-0 left-0 right-0 z-50 hidden h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0"
           role="dialog"
           style="align-items: flex-start"
         >
           <div class="relative h-full w-full max-w-4xl md:h-auto">
-            <!-- Modal content -->
-            <div class="relative rounded-lg bg-gray-700">
-              <!-- Modal header -->
-              <div
-                class="flex items-center justify-between rounded-t border-b border-gray-600 p-5"
-              >
-                <h3
-                  class="text-clamp-12-17 font-medium capitalize text-white"
-                  id="modal-recipe-title"
-                >
-                  <!-- * Recipe Title * -->
-                </h3>
-                <button
-                  type="button"
-                  class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-600 hover:text-white"
-                  data-modal-hide="modal"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span class="sr-only">Close modal</span>
-                </button>
-              </div>
-              <!-- Modal body -->
-              <div class="space-y-6 p-6">
-                <div class="flex flex-wrap items-center justify-between gap-4">
-                  <h3 class="text-clamp-12-17">Recipe Preparation</h3>
-                  <div class="rounded border px-4 py-0.5 md:px-8">
-                    <span
-                      class="text-center text-sm font-semibold text-white"
-                      id="modal-recipe-category"
-                    >
-                      <!-- * Recipe Category * -->
-                    </span>
-                  </div>
-                </div>
-                <p
-                  class="text-sm leading-relaxed text-gray-400 md:text-base"
-                  id="modal-preparation-instructions"
-                >
-                  <!-- * Recipe Preparation Instructions * -->
-                </p>
-              </div>
-              <!-- Modal footer -->
-              <div
-                class="flex flex-col items-center gap-8 space-x-2 rounded-b border-t border-gray-600 p-6"
-              >
-                <div class="font-semibol text-2xl">Recipe Tutorial Video</div>
-                <div class="h-full w-full">
-                  <iframe
-                    id="modal-yt-video"
-                    class="video-embed mx-auto"
-                    src=""
-                    title="Recipe Tutorial Video"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
+            <!-- Modal content autogenerated based on selected meal (stored in ./src/js/app.js)  -->
           </div>
         </div>
+        <div
+          class="overlay fixed inset-0 z-40 hidden h-full w-full bg-slate-900 opacity-90"
+          id="overlay"
+        ></div>
       </main>
 
       <!-- === Footer Section === -->
-      <footer class="footer absolute bottom-0 left-0 mt-16 w-full p-4 sm:p-6">
+      <footer
+        class="footer anim-down absolute bottom-0 left-0 mt-16 w-full p-4 sm:p-6"
+      >
         <div class="mx-auto max-w-screen-xl">
           <div class="mb-6 md:mb-0">
             <div class="flex items-center">
               <img
                 src="./src/icons/apple-touch-icon.png"
-                class="mr-3 h-8"
+                class="mr-3 h-auto w-9 sm:w-11"
                 alt="foodie fetch logo"
               />
               <span
@@ -353,17 +269,18 @@
             </div>
           </div>
           <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+
           <div class="sm:flex sm:items-center sm:justify-between">
+            <!-- Copyright © -->
             <span
-              class="flex justify-center text-sm text-gray-400 sm:text-center"
-              >© 2023 foodieFetch™. Developed by &nbsp;
+              class="flex flex-wrap justify-center gap-1 text-center text-sm text-gray-400"
+              >© 2023 foodieFetch™. Developed by
               <a
-                href="https://github.com/jeremy0x"
+                href="https://twitter.com/jeremy0x_"
                 target="_blank"
-                class="bg-gradient-to-r from-emerald-600 to-amber-500 bg-clip-text font-bold text-transparent"
+                class="bg-gradient-to-r from-emerald-600 to-amber-500 bg-clip-text text-transparent"
+                >Jeremy</a
               >
-                Jeremy </a
-              >.
             </span>
 
             <!-- Buy me a coffee -->
@@ -388,32 +305,36 @@
                 href="https://github.com/jeremy0x/foodie-fetch/"
                 target="_blank"
                 class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-white"
+                title="Star on GitHub ⭐"
               >
-                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-github fa-lg"></i>
                 <span class="sr-only">GitHub repository</span>
               </a>
               <a
                 href="https://jeremy0x.hashnode.dev/"
                 target="_blank"
                 class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-700"
+                title="View Hashnode Blog"
               >
-                <i class="fa-brands fa-hashnode"></i>
+                <i class="fa-brands fa-hashnode fa-lg"></i>
                 <span class="sr-only">Hashnode blog</span>
               </a>
               <a
-                href="https://twitter.com/jeremy0x/"
+                href="https://twitter.com/jeremy0x_/"
                 target="_blank"
                 class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-400"
+                title="Go to Twitter Profile"
               >
-                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-twitter fa-lg"></i>
                 <span class="sr-only">Twitter page</span>
               </a>
               <a
                 href="https://linkedin.com/in/jeremy0x/"
                 target="_blank"
                 class="text-gray-500 transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-blue-500"
+                title="Connect on LinkedIn"
               >
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-linkedin fa-lg"></i>
                 <span class="sr-only">LinkedIn profile</span>
               </a>
             </div>
@@ -424,6 +345,6 @@
 
     <!-- Scripts -->
     <script src="./src/js/food-quotes.js"></script>
-    <script type="module" src="./src/js/app.js"></script>
+    <script src="./src/js/app.js"></script>
   </body>
 </html>
