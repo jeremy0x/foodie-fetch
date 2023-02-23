@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "prettier": "^2.8.4",

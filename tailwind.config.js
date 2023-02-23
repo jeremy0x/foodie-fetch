@@ -2,7 +2,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./*.html", "./node_modules/flowbite/**/*.js"],
+  content: ["./*.html"],
   theme: {
     extend: {},
   },
@@ -22,7 +22,6 @@ module.exports = {
         });
       });
     }),
-    require("flowbite/plugin"),
     require("@tailwindcss/aspect-ratio"),
   ],
 };
