@@ -1,4 +1,4 @@
-# 🍲 foodieFetch
+# 🍲 [foodieFetch](https://foodie-fetch.netlify.app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c76df78d-433a-43c9-98fd-75b6e5b59764/deploy-status)](https://app.netlify.com/sites/foodie-fetch/deploys)
 
@@ -8,7 +8,7 @@ foodieFetch is a simple food recipe app built with Vanilla JavaScript and Tailwi
 
 ## How it works 🍜
 
-When you first open the app, you'll see a search bar where you can enter the ingredients you have. Clicking on the "Search" button will fetch recipe results from the API based on your search query.
+When you first open foodieFetch at [foodie-fetch.netlify.app](https://fodie-fetch.netlify.app), you'll see a search bar where you can enter the ingredients you have. Clicking on the "Search" button will fetch recipe results from the API based on your search query.
 
 You'll see a list of recipe results, each with a thumbnail image, recipe name, and a "`Recipe Details 🍲`" button. Clicking on the "Get Recipe" button for a recipe will display a popup with instructions and a video to watch below the instructions.
 
