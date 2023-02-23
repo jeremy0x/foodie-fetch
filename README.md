@@ -10,6 +10,9 @@ When you first open the app, you'll see a search bar where you can enter the ing
 
 You'll see a list of recipe results, each with a thumbnail image, recipe name, and a "`Recipe Details 🍲`" button. Clicking on the "Get Recipe" button for a recipe will display a popup with instructions and a video to watch below the instructions.
 
+![website screenshot](./src/img/project-screenshot.png)
+![website screenshot](./src/img/project-screenshot-1.png)
+
 ## Technologies used 🍴
 
 foodieFetch is built using:
