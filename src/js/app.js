@@ -47,6 +47,12 @@ function getMealsFromQuery(event) {
   const searchQuery = document.getElementById("search-bar").value.trim();
   // console.log(query);
 
+  if (searchQuery === "") {
+    error.textContent = "Please enter an ingredient to search for recipe(s) 🥞";
+    error.classList.remove("hidden");
+    return;
+  }
+
   searchTitle.textContent = "";
   error.textContent = "";
 
