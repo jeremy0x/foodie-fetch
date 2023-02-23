@@ -13,6 +13,7 @@ When you first open foodieFetch at [foodie-fetch.netlify.app](https://fodie-fetc
 You'll see a list of recipe results, each with a thumbnail image, recipe name, and a "`Recipe Details 🍲`" button. Clicking on the "Get Recipe" button for a recipe will display a popup with instructions and a video to watch below the instructions.
 
 ![website screenshot](./src/img/project-screenshot.png)
+
 ![website screenshot](./src/img/project-screenshot-1.png)
 
 ## Technologies used 🍴
