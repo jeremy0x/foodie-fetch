@@ -184,7 +184,7 @@ function getMealsFromQuery(event) {
                     <div
                       class="flex flex-col items-center gap-8 space-x-2 rounded-b border-t border-gray-600 p-6"
                     >
-                      <div class="font-semibold text-2xl">Recipe Tutorial Video 📹👨‍🍳</div>
+                      <h3 class="text-clamp-12-17 text-center">Recipe Tutorial Video 🎥👨‍🍳</h3>
                       <div class="h-full w-full">
                         <iframe
                           id="modal-yt-video"
