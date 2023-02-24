@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   elements.forEach((element, index) => {
-    setTimeout(() => element.classList.add("animate"), (index + 1) * 500);
+    setTimeout(() => element.classList.add("animate"), (index + 1) * 200);
   });
 });
 
