@@ -22,12 +22,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // rendering random food quotes
-// const foodQuotes = require('./food-quotes')
+/* 💭
+! for unknown reasons, not importing the foodQuotes variable doesn't show 
+! any error. The foodQuotes variable is still accessible even though it's
+! not imported in this file. */
+/* 💡
+ * If the foodQuotes variable is declared in another file in the same root
+ * directory and that file has been included in the HTML file before this
+ * file that uses the variable, then the variable will be accessible here,
+ * even if it's not explicitly imported.
+ * This is because all scripts included in the HTML file are loaded into a
+ * global scope, so any variables or functions declared in one script can
+ * be accessed by any other scripts included afterwards. */
 // console.log(foodQuotes);
 const quotesContainer = document.getElementById("quote");
-const randomIndex = Math.floor(Math.random() * foodQuotes.length);
-const randomQuote = foodQuotes[randomIndex];
-quotesContainer.innerHTML = `
+renderQuotes();
+
+// fetching from the API and implementation
+const searchBtn = document.getElementById("search-btn");
+const searchTitle = document.getElementById("search-result-title");
+const searchResults = document.getElementById("search-results");
+const modal = document.getElementById("details-modal");
+const error = document.getElementById("error");
+const overlay = document.getElementById("overlay");
+
+searchBtn.addEventListener("click", searchRecipes);
+
+// function definitions
+function renderQuotes() {
+  const randomIndex = Math.floor(Math.random() * foodQuotes.length);
+  const randomQuote = foodQuotes[randomIndex];
+  quotesContainer.innerHTML = `
   <p>
   <i class="fa-solid fa-quote-left"></i>
   <span>${randomQuote.quote}</span> 
@@ -38,13 +63,7 @@ quotesContainer.innerHTML = `
   <span class="font-semibold"> ${randomQuote.author}</span>
   </p>
 `;
-// fetching from the API and implementation
-const searchBtn = document.getElementById("search-btn");
-const searchTitle = document.getElementById("search-result-title");
-const searchResults = document.getElementById("search-results");
-const modal = document.getElementById("details-modal");
-const error = document.getElementById("error");
-const overlay = document.getElementById("overlay");
+}
 
 searchBtn.addEventListener("click", getMealsFromQuery);
 
