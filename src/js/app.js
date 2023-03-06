@@ -1,16 +1,24 @@
 // fadeIn animation after page load
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = [
-    document.querySelector(".navbar"),
-    document.querySelector(".hero-text"),
-    document.querySelector(".quote"),
-    document.querySelector(".search-bar"),
-    document.querySelector(".footer"),
-  ];
+  const navbar = document.querySelector(".navbar");
+  const heroText = document.querySelector(".hero-text");
+  const quote = document.querySelector(".quote");
+  const searchBar = document.querySelector(".search-bar");
+  const footer = document.querySelector(".footer");
 
-  elements.forEach((element, index) => {
-    setTimeout(() => element.classList.add("animate"), (index + 1) * 200);
-  });
+  navbar.classList.add("animate");
+  setTimeout(() => {
+    heroText.classList.add("animate");
+  }, 200);
+  setTimeout(() => {
+    quote.classList.add("animate");
+  }, 400);
+  setTimeout(() => {
+    searchBar.classList.add("animate");
+  }, 600);
+  setTimeout(() => {
+    footer.classList.add("animate");
+  }, 800);
 });
 
 // rendering random food quotes
