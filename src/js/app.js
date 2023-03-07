@@ -38,16 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const quotesContainer = document.getElementById("quote");
 renderQuotes();
 
-// fetching from the API and implementation
-const searchBtn = document.getElementById("search-btn");
-const searchTitle = document.getElementById("search-result-title");
-const searchResults = document.getElementById("search-results");
-const modal = document.getElementById("details-modal");
-const error = document.getElementById("error");
-const overlay = document.getElementById("overlay");
-
-searchBtn.addEventListener("click", searchRecipes);
-
 // function definitions
 function renderQuotes() {
   const randomIndex = Math.floor(Math.random() * foodQuotes.length);
@@ -62,9 +52,21 @@ function renderQuotes() {
     &nbsp;
     <span class="font-semibold"> ${randomQuote.author}</span>
     </p>
-  `;
+    `;
 }
 
+// variables declaration
+const searchBtn = document.getElementById("search-btn");
+const searchTitle = document.getElementById("search-result-title");
+const searchResults = document.getElementById("search-results");
+const modal = document.getElementById("details-modal");
+const error = document.getElementById("error");
+const overlay = document.getElementById("overlay");
+
+// get recipes on search
+searchBtn.addEventListener("click", searchRecipes);
+
+// function definitions
 async function searchRecipes(event) {
   event.preventDefault();
   const searchQuery = document.getElementById("search-bar").value.trim();
