@@ -142,6 +142,8 @@ async function searchRecipes(event) {
       recipeBtn.forEach((btn) =>
         btn.addEventListener("click", async () => {
           const mealId = btn.getAttribute("data-id");
+          let modalContent = "";
+
           try {
             const res = await fetch(
               `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
@@ -153,7 +155,6 @@ async function searchRecipes(event) {
             const videoId = mealDetail.strYoutube.split("?v=")[1];
 
             // filling in the modal with meal details
-            let modalContent = "";
             modalContent += `
               <div class="relative rounded-lg bg-gray-700 max-w-4xl mx-auto">
                 <!-- Modal header -->
