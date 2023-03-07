@@ -76,22 +76,20 @@ async function searchRecipes(event) {
     error.classList.remove("hidden");
     return;
   }
-
+  // remove previous content
   searchTitle.textContent = "";
   error.textContent = "";
-
   // add loader
   addLoader();
 
+  // fetch recipes
   try {
     const res = await fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchQuery}`
     );
     const data = await res.json();
     // console.log(data.meals);
-
     let searchResultsContent = "";
-
     // fade in results
     searchTitle.classList.add("fade-in");
     searchResults.classList.add("fade-in");
@@ -101,11 +99,9 @@ async function searchRecipes(event) {
       searchTitle.textContent = `Recipe Ideas for ${searchQuery
         .charAt(0)
         .toUpperCase()}${searchQuery.slice(1)}`;
-
       // display search results | meal cards
       searchResultsContent = renderRecipes(data, searchResultsContent);
       searchResults.innerHTML = searchResultsContent;
-
       // add event listener to each recipe button for modal
       const recipeBtn = document.querySelectorAll(".recipe-btn");
       getRecipeDetails(recipeBtn);
