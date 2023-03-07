@@ -142,90 +142,95 @@ async function searchRecipes(event) {
       recipeBtn.forEach((btn) =>
         btn.addEventListener("click", async () => {
           const mealId = btn.getAttribute("data-id");
-          const res = await fetch(
-            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
-          );
-          const data = await res.json();
-          // console.log(data.meals);
-          const mealDetail = data.meals[0];
-          // console.log(mealDetail.idMeal);
-          const videoId = mealDetail.strYoutube.split("?v=")[1];
+          try {
+            const res = await fetch(
+              `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+            );
+            const data = await res.json();
+            // console.log(data.meals);
+            const mealDetail = data.meals[0];
+            // console.log(mealDetail.idMeal);
+            const videoId = mealDetail.strYoutube.split("?v=")[1];
 
-          // filling in the modal with meal details
-          let modalContent = "";
-          modalContent += `
-            <div class="relative rounded-lg bg-gray-700 max-w-4xl mx-auto">
-              <!-- Modal header -->
-              <div
-                class="flex items-center justify-between rounded-t border-b border-gray-600 p-5"
-              >
-                <h3
-                  class="text-clamp-12-17 font-medium capitalize text-white"
-                  id="modal-recipe-title"
+            // filling in the modal with meal details
+            let modalContent = "";
+            modalContent += `
+              <div class="relative rounded-lg bg-gray-700 max-w-4xl mx-auto">
+                <!-- Modal header -->
+                <div
+                  class="flex items-center justify-between rounded-t border-b border-gray-600 p-5"
                 >
-                  ${mealDetail.strMeal} 🥘
-                </h3>
-                <button
-                  type="button"
-                  id="close-btn"
-                  class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-600 hover:text-white"
-                  onclick="closeModal()"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <h3
+                    class="text-clamp-12-17 font-medium capitalize text-white"
+                    id="modal-recipe-title"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                  <span class="sr-only">Close modal</span>
-                </button>
-              </div>
-              <!-- Modal body -->
-              <div class="space-y-6 p-6">
-                <div class="flex flex-wrap items-center justify-between gap-4">
-                  <h3 class="text-clamp-12-17">Recipe Preparation 📝🍳</h3>
-                  <div class="rounded border px-4 py-0.5 md:px-8">
-                    <span
-                      class="text-center text-sm font-semibold text-white"
-                      id="modal-recipe-category"
+                    ${mealDetail.strMeal} 🥘
+                  </h3>
+                  <button
+                    type="button"
+                    id="close-btn"
+                    class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-600 hover:text-white"
+                    onclick="closeModal()"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      🍽️ ${mealDetail.strCategory}
-                    </span>
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+                </div>
+                <!-- Modal body -->
+                <div class="space-y-6 p-6">
+                  <div class="flex flex-wrap items-center justify-between gap-4">
+                    <h3 class="text-clamp-12-17">Recipe Preparation 📝🍳</h3>
+                    <div class="rounded border px-4 py-0.5 md:px-8">
+                      <span
+                        class="text-center text-sm font-semibold text-white"
+                        id="modal-recipe-category"
+                      >
+                        🍽️ ${mealDetail.strCategory}
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    class="text-sm leading-relaxed text-gray-400 md:text-base"
+                    id="modal-preparation-instructions"
+                  >
+                    ${mealDetail.strInstructions.replace(/\n/g, "<br>")}
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div
+                  class="flex flex-col items-center gap-8 space-x-2 rounded-b border-t border-gray-600 p-6"
+                >
+                  <h3 class="text-clamp-12-17 text-center">Recipe Tutorial Video 🎥👨‍🍳</h3>
+                  <div class="h-full w-full">
+                    <iframe
+                      id="modal-yt-video"
+                      class="video-embed mx-auto"
+                      src="https://www.youtube.com/embed/${videoId}"
+                      title="Recipe Tutorial Video"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
                   </div>
                 </div>
-                <p
-                  class="text-sm leading-relaxed text-gray-400 md:text-base"
-                  id="modal-preparation-instructions"
-                >
-                  ${mealDetail.strInstructions.replace(/\n/g, "<br>")}
-                </p>
               </div>
-              <!-- Modal footer -->
-              <div
-                class="flex flex-col items-center gap-8 space-x-2 rounded-b border-t border-gray-600 p-6"
-              >
-                <h3 class="text-clamp-12-17 text-center">Recipe Tutorial Video 🎥👨‍🍳</h3>
-                <div class="h-full w-full">
-                  <iframe
-                    id="modal-yt-video"
-                    class="video-embed mx-auto"
-                    src="https://www.youtube.com/embed/${videoId}"
-                    title="Recipe Tutorial Video"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          `;
+            `;
+          } catch (error) {
+            console.error(error);
+          }
+
           modal.innerHTML = modalContent;
           modal.classList.remove("hidden");
           overlay.classList.remove("hidden");
