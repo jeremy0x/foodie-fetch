@@ -72,13 +72,6 @@
   height: 100%;
 }
 
-/* navbar social icons */
-@media (max-width: 375px) {
-  .nav-icons a:not(.github-icon) {
-    display: none;
-  }
-}
-
 /* animation on page load */
 .anim-up,
 .anim-down {
